@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      background-color: hsl(185, 41%, 84%);
+      text-align: center;
+    }
+
+    a {
+      text-decoration-line: none;
+    }
+
+    img {
+      position: relative;
+      bottom: 2.5rem;
+      left: 1rem;
+    }
+
+    input {
+      border: 1px solid hsl(189, 41%, 97%);
+      text-align: right;
+      background-color: hsl(189, 41%, 97%);
+
+    }
+
+    input:focus {
+      outline: none !important;
+      border: 2px solid hsl(183, 90%, 24%);
+    }
+
+    input::placeholder {
+      color: hsl(183, 90%, 24%);
+      text-align: right;
+    }
+
+    #logo {
+      color: hsl(184, 14%, 56%);
+    }
+
+    #body {
+      background-color: #fff;
+      margin: 5rem 15rem;
+      margin-top: 0;
+      border-radius: 5%;
+      height: 500px;
+      width: 800px;
+      padding: 2rem;
+      text-align: left;
+    }
+
+    .h12 {
+      position: absolute;
+      right: 1rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .con {
+      padding: 1rem;
+    }
+
+    .con2 {
+      background-color: hsl(183, 100%, 15%);
+      border-radius: 20px;
+      color: #fff;
+      position: relative;
+      left: 3rem;
+      width: 300px;
+    }
+
+    .p1 {
+      border-radius: 10px;
+      height: 20px;
+      width: 100%;
+      padding: 1rem;
+      color: hsl(183, 100%, 15%);
+      font-size: 30px;
+    }
+
+    .img1 {
+      width: 20px;
+    }
+
+    .para {
+      display: inline-block;
+      position: relative;
+    }
+
+    .c {
+      background-color: hsl(183, 100%, 15%);
+      border-radius: 10px;
+      width: 50px;
+      padding: 1rem;
+      color: #fff;
+      margin-left: 3rem;
+      margin-top: 1rem;
+    }
+
+    .c:hover {
+      background-color: hsl(186, 14%, 43%);
+    }
+
+    .c6 {
+      padding: .5rem;
+      border-radius: 10px;
+      width: 50px;
+      padding: 1rem;
+      margin-left: 3rem;
+      margin-top: 1rem;
+    }
+
+    .p2 {
+      color: hsl(185, 41%, 84%);
+    }
+
+    .btn {
+      background-color: hsl(172, 67%, 45%);
+      border-radius: 10px;
+      color: hsl(183, 100%, 15%);
+      display: inline-block;
+      text-align: center;
+      padding: 1rem;
+      text-decoration-line: none;
+      width: 250px;
+      position: absolute;
+      bottom: 3rem;
+    }
+
+    .btn:hover {
+      background-color: hsl(172, 78%, 34%);
+
+    }
+
+    .h32 {
+      color: hsl(172, 67%, 45%);
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 0;
+      }
+
+      #body {
+        display: block;
+        margin-left: 1rem;
+        width: 350px;
+        height: 850px;
+      }
+
+      .con2 {
+        height: 300px;
+        position: relative;
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="logo">
+    <h1>SPLI</h1>
+    <h1>TTER</h1>
+  </header>
+  <main id="body" class="flex body">
+    <div class="con1 con">
+      <h3>Bill</h3>
+      <input class="flex p1 i1" value="142.55" type="text" placeholder="0">
+      <img class="img1" src="images/icon-dollar.svg" alt="dollar">
+      <h3>Select tip</h3>
+      <div class="cc flex">
+        <a href="#" class="c1 c">5%</a>
+        <a href="#" class="c2 c">10%</a>
+        <a href="#" class="c3 c">15%</a>
+      </div>
+      <div class="cc flex">
+        <a href="#" class="c4 c">25%</a>
+        <a href="#" class="c5 c">50%</a>
+        <input type="text" value="15" placeholder="Custom" class="c6 i2">
+      </div>
+      <h3>Number of people</h3>
+      <input class="flex p1 i3" onload="script" value="5" placeholder="0" type="text">
+      <img class="img1" src="images/icon-person.svg" alt="person">
+
+    </div>
+    <div class="con2 con">
+      <div class="flex">
+        <div>
+          <h3 class="h32">Tip Amount</h3>
+          <p class="p2">/person</p>
+        </div>
+        <h1 class="h12 ta">$4.2</h1>
+      </div>
+      <div class="flex">
+        <div>
+          <h3 class="h32">Total</h3>
+          <p class="p2">/person</p>
+        </div>
+        <h1 class="h12 t">$32.7</h1>
+      </div>
+      <a class="btn" href="#">Reset</a>
+    </div>
+
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="#">Frontend Mentor</a>.
+    Coded by <a href="#">Abhishek Bansal</a>.
+  </div>
+  <script>
+    document.querySelector(".btn").addEventListener("click", function () {
+
+      let tip = 0, bill = 0, people = 0;
+      bill = parseInt(document.querySelector(".i1").value);
+      people = parseInt(document.querySelector(".i3").value);
+      if (tip == 0 && parseInt(document.querySelector(".i2").value) != 0) {
+        tip = 0.01 * parseInt(document.querySelector(".i2").value);
+        document.querySelector(".ta").innerText = (tip * bill) / people;
+        document.querySelector(".t").innerText = ((tip * bill) / people) + (bill / people);
+      }
+      for (let i = 0; i < 5; i++) {
+        document.querySelectorAll(".c")[i].addEventListener("click", function () {
+          for (let j = 0; j < 5; j++) {
+            document.querySelector(".c" + (j + 1)).style.backgroundColor = "hsl(183, 100%, 15%)";
+          }
+          document.querySelector(".c" + (i + 1)).style.backgroundColor = " hsl(186, 14%, 43%)";
+          if (i == 0) tip = 0.05;
+          if (i == 1) tip = 0.1;
+          if (i == 2) tip = 0.15;
+          if (i == 3) tip = 0.25;
+          if (i == 4) tip = 0.5;
+          document.querySelector(".ta").innerText = (tip * bill) / people;
+          document.querySelector(".t").innerText = ((tip * bill) / people) + (bill / people);
+        });
+        for (let j = 0; j < 5; j++) {
+            document.querySelector(".c" + (j + 1)).style.backgroundColor = "hsl(183, 100%, 15%)";
+          }
+      }
+    });
+  </script>
+</body>
+
+</html
